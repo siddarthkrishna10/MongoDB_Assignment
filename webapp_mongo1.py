@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect
 from pymongo import MongoClient
-from Crud_Classes1 import *
+from Crud_Classes import *
 
 webapp = Flask(__name__)
 webapp.config.update(dict(SECRET_KEY='yoursecretkey'))
@@ -79,7 +79,7 @@ def main():
     for i in docs:
         data.append(i)
 
-    return render_template('layout1.html', cform=cform,
+    return render_template('layout.html', cform=cform,
                            uform=uform, dform=dform,
                            data=data, reset=reset)
 
